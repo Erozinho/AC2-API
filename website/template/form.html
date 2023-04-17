@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<style>
+  body{
+    background-color: white;
+  }
+  .centralize{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  form{
+      border-style: solid;
+      border-width: 1px black;
+      font-family: Verdana;
+      max-width: 540px;
+      color:#4a4a4a;
+  }
+
+  h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  .nome,.tel,.email,.ass,.ms{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  #Telefone::-webkit-outer-spin-button,#Telefone::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+  }
+
+  #email,#nome,#Telefone,#msg{
+    width: 510px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+  }
+
+  #assunto{
+    width: 518px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+  }
+  
+  #op{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  fieldset{
+      border: 1px solid gray;
+      margin-left: 10px;
+      margin-right: 10px;
+      width: auto;
+      font-size: 14px;
+      margin-bottom: 12px;
+  }
+
+  .botao1{
+    background-color: lightcyan; 
+    border: 1px solid darkslategray;
+    color: darkslategray;
+    padding: 0.2em 2.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+  .botao1:hover,.botao2:hover {
+    background-color: lightgray;
+}
+  .botao2{
+    background-color: lightcyan; 
+    border: 1px solid darkslateblue;
+    color: darkslateblue;
+    padding: 0.2em 2.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+  .bcentral{
+    margin-left: 31%;
+  }
+
+  .botao3 {
+    background-color: lightcyan;
+    border: 1.5px solid darkslateblue;
+    border-radius: 20px 20px 20px 20px;
+    color: #4a4a4a;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: auto;
+}
+
+  .botao3:hover {
+    background-color: rgb(81, 81, 81);
+    color:rgb(255, 255, 255);
+    transition: all 0.3s ease-in-out;
+}
+
+</style>
+<div class="centralize">
+  <form id="form1" method="post">
+      <h1>Fale conosco</h1>
+      <label class="nome" for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome" required><br>
+
+      <label class="email" for="email">e-mail:</label><br>
+      <input type="email" id="email" name="email" required><br>
+
+      <label class="tel" for="Telefone">Telefone:</label><br>
+      <input type="number" id="Telefone" name="Telefone" required><br>
+
+      <label class="ass" for="assunto">Assunto:</label><br>
+      <select id="assunto" name="assunto" required>
+        <option value="">Selecione uma Opção</option>
+        <option value="1">Atendimento ao cliente</option>
+        <option value="2">Secretaria de Graduação</option>
+        <option value="3">Secretaria de Pós Graduação</option>
+        <option value="4">Financeiro</option>
+        <option value="5">Ouvidoria</option>
+      </select><br>
+
+      <label class="ms" for="msg">Mensagem:</label><br>
+      <textarea required name="msg" id="msg" cols= auto rows="4" maxlength="500" minlength="2" placeholder="Digite aqui sua mensagem"></textarea><br>
+        
+      <fieldset>
+        <legend>Como nos conheceu?</legend>
+        <div id="op">
+        <input type="radio" id="1" name="conheceu" value="1">
+        <label for="1">Google Ads</label>
+         <input type="radio" id="2" name="conheceu" value="2">
+         <label for="2">insta</label>
+         <input type="radio" id="3" name="conheceu" value="3">
+         <label for="3">Podcasts</label>
+         <input type="radio" id="4" name="conheceu" value="4">
+         <label for="4">Tv</label>
+         <input type="radio" id="5" name="conheceu" value="5">
+         <label for="5">Amigos</label>
+         <input type="radio" id="6" name="conheceu" value="6">
+         <label for="6">Outros</label><br>
+         </div>
+      </fieldset>
+
+      <div class="bcentral">
+        <input class="botao1" type="submit" value="Enviar">
+        <input class="botao2"type="reset" value="Limpar">
+      </div>  
+  </form><br> 
+</div><br>
+{% endblock %}

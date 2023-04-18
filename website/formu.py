@@ -9,5 +9,5 @@ def form_get():
 @formu.route('/', methods=['POST'])
 def form_post():
     dados = request.form
-    print(jsonify(dados))
+    print(jdados)
     return jsonify(dados), 200
